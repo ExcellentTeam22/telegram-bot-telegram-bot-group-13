@@ -79,27 +79,24 @@ def handle_message():
     else:
         if number_bot.isdigit() is False:
             result = "The input is't number"
-            return return_and_stop(chat_id, result)
+            return_and_stop(chat_id, result)
 
         number_bot = int(number_bot)
         if type_command == char+list_commands[0]:
             result = check_prime(number_bot)
-            return return_and_stop(chat_id, result)
 
         elif type_command == char+list_commands[1]:
             result = isFactorial(number_bot)
-            return return_and_stop(chat_id, result)
 
         elif type_command == char+list_commands[2]:
             result = isPalindrome(number_bot)
-            return return_and_stop(chat_id, result)
 
         elif type_command == char+list_commands[3]:
             result = isSqrt(number_bot)
-            return return_and_stop(chat_id, result)
 
         else:
-            return print_connect()
+            result = print_connect()
+        return return_and_stop(chat_id, result)
 
 
 @app.route('/sanity')
